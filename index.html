@@ -1,0 +1,127 @@
+<html>
+	<head>
+		<title></title>
+		
+		
+
+		<!-- Material CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+
+		<!-- My CSS -->
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+	</head>
+	<body>
+		<header>
+			<div class="navbar-fixed">
+				<ul id="dropdown1" class="dropdown-content">
+					<li><a href="#">Statistics</a></li>
+					<li><a href="#">Inquiry Submission</a></li>
+					<li><a href="#">Contact Us</a></li>
+					<li><a href="#">Help</a></li>
+					<li><a href="#">Projects</a></li>
+					<li><a href="#">People</a></li>
+				</ul>
+				<nav class="row">
+					<div class="nav-wrapper col s12">
+						<a href="#" class="brand-logo">RNA-seq meta-DB</a>
+						<ul id="nav-mobile" class="right hide-on-med-and-down">
+							<li><a class="dropdown-button" href="#" data-activates="dropdown1">Menu</a></li>
+						</ul>
+						<form class="col s4 right">
+							<div class="input-field">
+								<input id="search" type="search" required>
+								<label for="search"><i class="mdi-action-search"></i></label>
+								<i class="mdi-navigation-close"></i>
+							</div>
+						</form>
+							
+							<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+							<ul class="side-nav" id="mobile-demo">
+							<li><a href="#">Sass</a></li>
+							<li><a href="#">Components</a></li>
+							<li><a href="#">Javascript</a></li>
+							<li><a href="#">Mobile</a></li>
+							</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<div class="row" style="display: none;">
+				<h1 class="name-title col s12 thin center">RNAseqMetaDB</h1>
+				<div class="container">
+					<h5 class="col s12 thin title-interest">
+						Finding the RNA-seq datasets you are interested in
+					</h5>
+				</div>
+			</div>
+			<div>
+				<ul class="tabs">
+					<li class="tab col s4"><a href="#general-tab">Search</a></li>
+					<li class="tab col s4"><a href="#keyword-tab">Keyword Search</a></li>
+					<li class="tab col s4"><a href="#publication-tab">Publications View</a></li>
+				</ul>
+			</div>
+			<div id="general-tab" class="tab-container row container">
+				<div class="input-field col s4">
+					<h6>Gene Name</h6>
+					<select class="multi-select-column" id="gene-select" type="text" multiple="true">
+						<option value="1">Option 1</option>
+						<option value="2">Option 2</option>
+						<option value="3">Option 3</option>
+					</select>
+				</div>
+				<div class="input-field col s4">
+					<h6>Disease</h6>
+					<select class="multi-select-column" id="disease-select" type="text" multiple="true">
+						<option value="1">Option 1</option>
+						<option value="2">Option 2</option>
+						<option value="3">Option 3</option>
+					</select>
+				</div>
+				<div class="input-field col s4">
+					<h6>Accession ID</h6>
+					<select class="multi-select-column" id="accession-select" type="text" multiple="true">
+						<option value="1">Option 1</option>
+						<option value="2">Option 2</option>
+						<option value="3">Option 3</option>
+					</select>
+				</div>
+			</div>
+			<div id="keyword-tab" class="row">
+				
+			</div>
+			<div id="publication-tab" class="row">
+
+			</div>
+		</main>
+
+		<footer class="page-footer">
+			<div class="footer-copyright">
+				<div class="container">
+					<a class="left">&copy 2015</a>
+					<a class="right" href="#!">More Links</a>
+				</div>
+			</div>
+		</footer>
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('.parallax').parallax();
+					$('.button-collapse').sideNav({
+						menuWidth: 300, // Default is 240
+						edge: 'right', // Choose the horizontal origin
+						closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+					});
+					$('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+
+				});
+			</script>
+
+	</body>
+</html>

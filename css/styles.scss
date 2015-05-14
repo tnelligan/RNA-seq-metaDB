@@ -1,0 +1,95 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #000000;
+$secondary-color: #E8A000;
+
+body {
+	display: flex; 
+	min-height: 100vh; 
+	flex-direction: column;
+}
+
+main {
+	display: flex;
+	flex-flow: column;
+	flex: 1 0 auto;
+}
+
+.waves-effect.waves-primary .waves-ripple {
+	background-color: $primary-color;
+	opacity: .6;
+}
+
+a {
+	color: $primary-color !important;
+}
+
+mark {
+	color: $secondary-color !important;
+	background: none;
+}
+
+nav {
+	background-color: #FFFFFF;
+	margin: 0;
+}
+
+.button-collapse {
+	float: right !important;
+}
+
+nav .input-field label i{
+	color: $primary-color;
+}
+
+nav .input-field label.active i{
+	color: $primary-color;
+}
+
+.input-field input[type=search]:focus+label i, 
+.input-field input[type=search]:focus ~ .mdi-navigation-close {
+	color: $secondary-color;
+}
+
+.name-title {
+	color: $primary-color;
+	font-weight: 200;
+}
+
+.title-interest {
+	margin: 0;
+	text-align: center;
+}
+
+.tabs .indicator {
+	background-color: $secondary-color;
+}
+
+.tab-container, .tab-container>.collapsible {
+	display: flex;
+	flex-flow: row;
+	flex: 1 1 auto;
+}
+
+.tab-container>.input-field {
+	display: flex !important;
+	flex-flow: column;
+}
+
+.tab-container>.input-field>.h6 {
+	flex: 0 1 auto;
+}
+
+.tab-container>.input-field>.select {
+	flex: 1 1 auto;
+}
+
+.multi-select-column {
+	display: block;
+	flex: 1 1 auto;
+}
+
+footer.page-footer {
+	background-color: #FFFFFF;
+	padding: 0;
+	margin: 0;
+}
