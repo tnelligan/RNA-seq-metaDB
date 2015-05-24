@@ -1,0 +1,119 @@
+<html>
+	<head>
+		<title>RNA</title>
+		
+		
+
+		<!-- Material CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+
+		<!--link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css"-->
+
+		<!-- My CSS -->
+		<link rel="stylesheet" type="text/css" href="../css/styles.css">
+	</head>
+	<body>
+		<header>
+			<div class="navbar-fixed">
+				<ul id="dropdown1" class="dropdown-content">
+					<li><a href="#">Statistics</a></li>
+					<li><a href="#">Inquiry Submission</a></li>
+					<li><a href="#">Contact Us</a></li>
+					<li><a href="#">Help</a></li>
+				</ul>
+				<nav class="row">
+					<div class="nav-wrapper col s12">
+						<a href="index.html" class="brand-logo">RNA-seq meta-DB</a>
+						<ul id="nav-mobile" class="right hide-on-med-and-down">
+							<li><a class="dropdown-button" href="#" data-activates="dropdown1" data-constrainwidth="false">Menu</a></li>
+						</ul>
+						<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+						<ul class="side-nav" id="mobile-demo">
+							<li><a href="#">Sass</a></li>
+							<li><a href="#">Components</a></li>
+							<li><a href="#">Javascript</a></li>
+							<li><a href="#">Mobile</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<div class="row">
+				<h1 class="name-title col s12 thin center">RNAseqMetaDB</h1>
+				
+			</div>
+			<div id="general-tab" class="tab-container row container">
+				<table id="search-results" class="bordered">
+					<tbody>
+						<tr>
+							<td>Title</td>
+							<td>
+								<h5 id="title"></h5>
+							</td>
+						</tr>
+						<tr>
+							<td>ArrayExpress</td>
+							<td>
+								<a id="accession"></a>
+							</td>
+						</tr>
+						<tr>
+							<td>Tissue</td>
+							<td>
+								<a id="tissue"></a>
+							</td>
+						</tr>
+						<tr>
+							<td>Abstract</td>
+							<td>
+								<a id="abstract"></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</main>
+
+		<footer class="page-footer">
+			<div class="footer-copyright">
+				<div class="container">
+					<a class="left">&copy 2015</a>
+					<a class="right" href="#!">More Links</a>
+				</div>
+			</div>
+		</footer>
+
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+
+		<script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+
+		<script type="text/javascript" src="../data/RNAdata.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.button-collapse').sideNav({
+					menuWidth: 300, // Default is 240
+					edge: 'right', // Choose the horizontal origin
+					closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+				});
+				$('select').material_select();
+				var searchID = window.location.search;
+				searchID = searchID.split('=')[1];
+				var publicationData
+				for( var i = 0; i < RNA.length; i++) {
+					if(RNA[i].accession === searchID) {
+						publicationData = RNA[i];
+					}
+				}
+				document.getElementById('title').innerText = publicationData.title;
+				document.getElementById('accession').innerText = publicationData.accession;
+				document.getElementById('tissue').innerText = publicationData.tissue;
+
+			});
+		</script>
+
+	</body>
+</html>
